@@ -1,0 +1,23 @@
+# Ignore everything
+*
+
+# Don't ignore dirs
+!*/
+
+# Specifically ignore
+.idea/
+build/
+target/
+.vscode/
+
+# Add what we need
+!.containerignore
+!.gitignore
+!Containerfile
+!README.md
+!mvnw
+!mvnw.cmd
+!pom.xml
+
+!.mvn/**
+!src/**

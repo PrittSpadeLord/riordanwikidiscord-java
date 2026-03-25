@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Add what we need
+!mvnw
+!mvnw.cmd
+!pom.xml
+
+!.mvn/**
+!src/**
