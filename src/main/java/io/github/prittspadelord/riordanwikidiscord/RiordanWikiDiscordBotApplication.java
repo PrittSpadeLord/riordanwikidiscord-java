@@ -19,7 +19,7 @@ public class RiordanWikiDiscordBotApplication {
         client.withGateway((gateway) -> {
             Mono<Void> readyListener = gateway.on(ReadyEvent.class, event -> {
 
-                return client.getChannelById(Snowflake.of(Channels.MOD.getId())).createMessage(String.format("%s %s %s %s", Emotes.OGYGIA, Emotes.DUAT, Emotes.LABYRINTH, Emotes.MIDGARD));
+                return client.getChannelById(Snowflake.of(Channels.GENERAL.getId())).createMessage(String.format("%s%s%s", Emotes.EXPBAR_FULL, Emotes.EXPBAR_ONEFOURTH, Emotes.EXPBAR_EMPTY));
             }).then();
 
             return Mono.when(readyListener);
