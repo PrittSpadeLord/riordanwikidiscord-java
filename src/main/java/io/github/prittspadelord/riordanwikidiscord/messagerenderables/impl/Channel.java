@@ -1,6 +1,7 @@
 package io.github.prittspadelord.riordanwikidiscord.messagerenderables.impl;
 
 import io.github.prittspadelord.riordanwikidiscord.messagerenderables.MessageRenderable;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

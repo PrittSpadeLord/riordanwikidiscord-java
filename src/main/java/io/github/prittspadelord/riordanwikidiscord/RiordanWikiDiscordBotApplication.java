@@ -1,11 +1,14 @@
 package io.github.prittspadelord.riordanwikidiscord;
 
+import io.github.prittspadelord.riordanwikidiscord.constants.Channels;
+import io.github.prittspadelord.riordanwikidiscord.constants.Emotes;
+
 import discord4j.common.util.Snowflake;
 import discord4j.core.DiscordClient;
 import discord4j.core.event.domain.lifecycle.ReadyEvent;
-import io.github.prittspadelord.riordanwikidiscord.constants.Channels;
-import io.github.prittspadelord.riordanwikidiscord.constants.Emotes;
+
 import org.springframework.boot.SpringApplication;
+
 import reactor.core.publisher.Mono;
 
 public class RiordanWikiDiscordBotApplication {
