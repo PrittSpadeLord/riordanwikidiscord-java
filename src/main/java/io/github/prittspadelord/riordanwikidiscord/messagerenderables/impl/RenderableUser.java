@@ -7,7 +7,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class User implements MessageRenderable {
+public class RenderableUser implements MessageRenderable {
     private long id;
 
     @Override

@@ -17,7 +17,7 @@
         <jackson.version>2.21.2</jackson.version>
         <logback.version>1.5.32</logback.version>
         <lombok.version>1.18.42</lombok.version>
-        <nettycodec.version>4.1.131.Final</nettycodec.version>
+        <nettycodechttp2.version>4.2.12.Final</nettycodechttp2.version>
         <protobufjava.version>3.25.8</protobufjava.version>
         <reactor.version>3.8.4</reactor.version>
         <springboot.version>3.5.13</springboot.version>
@@ -45,6 +45,12 @@
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobufjava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-codec-http2</artifactId>
+                <version>${nettycodechttp2.version}</version>
             </dependency>
 
             <dependency>
@@ -77,6 +83,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
             <version>${springboot.version}</version>
         </dependency>
     </dependencies>

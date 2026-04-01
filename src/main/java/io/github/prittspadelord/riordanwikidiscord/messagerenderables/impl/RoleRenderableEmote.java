@@ -1,17 +1,14 @@
 package io.github.prittspadelord.riordanwikidiscord.messagerenderables.impl;
 
-import io.github.prittspadelord.riordanwikidiscord.messagerenderables.MessageRenderable;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
-@NoArgsConstructor
-public class Emote implements MessageRenderable {
+public class RoleRenderableEmote extends RenderableEmote {
     private String name;
     private long id;
+    private long roleId;
 
     @Override
     public String toString() {
