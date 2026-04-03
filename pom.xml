@@ -19,7 +19,6 @@
         <lombok.version>1.18.42</lombok.version>
         <nettycodechttp2.version>4.2.12.Final</nettycodechttp2.version>
         <protobufjava.version>3.25.8</protobufjava.version>
-        <reactor.version>3.8.4</reactor.version>
         <springboot.version>3.5.13</springboot.version>
 
         <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
@@ -51,12 +50,6 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-codec-http2</artifactId>
                 <version>${nettycodechttp2.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.projectreactor</groupId>
-                <artifactId>reactor-core</artifactId>
-                <version>${reactor.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

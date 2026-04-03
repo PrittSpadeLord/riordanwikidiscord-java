@@ -9,7 +9,7 @@ public class Emotes {
     public static final RenderableEmote EXPERIENCE = new RenderableEmote("experience", 602178294376431660L);
     public static final RenderableEmote ENTER = new RenderableEmote("enter", 712576327886045244L);
     public static final RenderableEmote LEAVE = new RenderableEmote("leave", 712576328531968040L);
-    public static final RenderableEmote FANDOM = new RenderableEmote("fandom", 712576328531968040L);
+    public static final RenderableEmote FANDOM = new RenderableEmote("fandom", 1489703896590057592L);
 
     public static final RenderableEmote EXPBAR_EMPTY = new RenderableEmote("emptybar", 631002923853283351L);
     public static final RenderableEmote EXPBAR_ONEFOURTH = new RenderableEmote("halfstarbar1", 631128340211957810L);

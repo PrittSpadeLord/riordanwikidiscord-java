@@ -1,5 +1,8 @@
 package io.github.prittspadelord.riordanwikidiscord;
 
+import io.github.prittspadelord.riordanwikidiscord.eventhandlers.MessageCreateEventHandler;
+import io.github.prittspadelord.riordanwikidiscord.eventhandlers.ReadyEventHandler;
+
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.lifecycle.ReadyEvent;
@@ -13,14 +16,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class DiscordBotLauncher implements CommandLineRunner {
 
-    private EventHandler eventHandler;
+    private ReadyEventHandler readyEventHandler;
     private GatewayDiscordClient client;
+    private MessageCreateEventHandler messageCreateEventHandler;
 
     @Override
     public void run(String... args) {
-        client.on(ReadyEvent.class, eventHandler::handleReadyEvent).subscribe();
-        client.on(MessageCreateEvent.class, eventHandler::handleMessageCreateEvent).subscribe();
-
+        client.on(ReadyEvent.class, readyEventHandler::handleEvent).subscribe();
+        client.on(MessageCreateEvent.class, messageCreateEventHandler::handleEvent).subscribe();
         client.onDisconnect().block();
     }
 }
