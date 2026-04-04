@@ -12,6 +12,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import reactor.core.publisher.Flux;
+
 @AllArgsConstructor
 @Component
 public class DiscordBotLauncher implements CommandLineRunner {
@@ -21,9 +23,13 @@ public class DiscordBotLauncher implements CommandLineRunner {
     private MessageCreateEventHandler messageCreateEventHandler;
 
     @Override
-    public void run(String... args) {
-        client.on(ReadyEvent.class, readyEventHandler::handleEvent).subscribe();
-        client.on(MessageCreateEvent.class, messageCreateEventHandler::handleEvent).subscribe();
+    public void run(String[] args) {
+
+        Flux.merge(
+            client.on(ReadyEvent.class, readyEventHandler::handleEvent),
+            client.on(MessageCreateEvent.class, messageCreateEventHandler::handleEvent)
+        ).subscribe();
+
         client.onDisconnect().block();
     }
 }

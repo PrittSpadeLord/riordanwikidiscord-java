@@ -13,7 +13,8 @@
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <discord4j.version>3.3.1</discord4j.version>
+        <commons.io.version>2.21.0</commons.io.version>
+        <discord4j.version>3.3.2</discord4j.version>
         <jackson.version>2.21.2</jackson.version>
         <logback.version>1.5.32</logback.version>
         <lombok.version>1.18.42</lombok.version>
@@ -50,6 +51,12 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-codec-http2</artifactId>
                 <version>${nettycodechttp2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
