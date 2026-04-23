@@ -23,7 +23,7 @@ public class ReadyEventHandler {
 
     private GatewayDiscordClient client;
 
-    public Mono<?> handleEvent(ReadyEvent event) {
+    public Mono<Void> handleEvent(ReadyEvent event) {
 
         log.info("Logged in as {} serving {} guilds", event.getSelf().getUsername(), event.getGuilds().size());
         log.debug("Session ID: {} | Shard: {} | Gateway Version: {}", event.getSessionId(), event.getShardInfo(), event.getGatewayVersion());
@@ -38,6 +38,6 @@ public class ReadyEventHandler {
                     .build();
 
                 return channel.createMessage(spec);
-            });
+            }).then();
     }
 }

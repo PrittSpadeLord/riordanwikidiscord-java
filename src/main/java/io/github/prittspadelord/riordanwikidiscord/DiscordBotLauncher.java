@@ -23,7 +23,7 @@ public class DiscordBotLauncher implements CommandLineRunner {
     private MessageCreateEventHandler messageCreateEventHandler;
 
     @Override
-    public void run(String[] args) {
+    public void run(String[] unusedArgs) {
 
         Flux.merge(
             client.on(ReadyEvent.class, readyEventHandler::handleEvent),

@@ -1,6 +1,6 @@
 package io.github.prittspadelord.riordanwikidiscord.eventhandlers;
 
-import io.github.prittspadelord.riordanwikidiscord.commands.CommandHandler;
+import io.github.prittspadelord.riordanwikidiscord.commands.CommandDispatcher;
 import io.github.prittspadelord.riordanwikidiscord.stickers.StickerHandler;
 
 import discord4j.core.event.domain.message.MessageCreateEvent;
@@ -16,10 +16,10 @@ import reactor.core.publisher.Mono;
 @Component
 public class MessageCreateEventHandler {
 
-    private CommandHandler commandHandler;
+    private CommandDispatcher commandDispatcher;
     private StickerHandler stickerHandler;
 
-    public Mono<?> handleEvent(MessageCreateEvent event) {
+    public Mono<Void> handleEvent(MessageCreateEvent event) {
         Message message = event.getMessage();
 
         if(message.getAuthor().isEmpty()) return Mono.empty();
@@ -28,11 +28,12 @@ public class MessageCreateEventHandler {
         String content = message.getContent();
 
         if(content.startsWith("$")) {
-            return commandHandler.handleCommand(content.substring(1));
+            //perhaps simply return embed
+            return commandDispatcher.handleCommand(content.substring(1)).then();
         }
 
         if(content.startsWith(";") && content.endsWith(";")) {
-            return stickerHandler.handleSticker(content.substring(1, content.length() - 1));
+            return stickerHandler.handleSticker(content.substring(1, content.length() - 1)).then();
         }
 
         return Mono.empty();
